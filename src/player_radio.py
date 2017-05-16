@@ -122,6 +122,7 @@ class RadioPlayer(BasePlayer):
         self._plugins.volume.props.volume = 1.0
         self._playbin.set_state(Gst.State.NULL)
         self._playbin.set_property("uri", track.uri)
+        self._playbin.set_property("buffer-duration", 3000000000)
         Radios().set_more_popular(track.album_artists[0])
         self._current_track = track
         self.__current = None
